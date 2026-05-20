@@ -272,11 +272,17 @@ export default function CommandPlayground({ accent = "blue", theme = "dark", onT
         <div className="mb-6 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
             <p className={`text-sm font-medium uppercase tracking-widest ${promptColor}`}>Browser Commands</p>
-            <h2 className="mt-2 text-3xl font-bold md:text-4xl">Play with the fake terminal</h2>
+            <h2 className="mt-2 text-3xl font-bold md:text-4xl">Try out the Portfolio Terminal</h2>
           </div>
-          <p className="max-w-xl text-sm leading-6 text-zinc-400">
-            It looks like a shell, but it only responds to preset browser commands.
-          </p>
+          <button
+            onClick={() => {
+              setLines([]);
+              focusInput();
+            }}
+            className={`rounded-md px-3 py-2 text-sm font-medium transition-colors duration-300 ${terminalStyles.muted} hover:${terminalStyles.text} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent focus:ring-blue-500`}
+          >
+            Clear Terminal
+          </button>
         </div>
 
         <div className={`rounded-3xl border p-5 shadow-2xl transition-colors duration-300 ${terminalStyles.shell}`} onClick={focusInput} role="presentation">

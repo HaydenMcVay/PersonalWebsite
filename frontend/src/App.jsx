@@ -98,14 +98,19 @@ export default function App() {
         </nav>
 
         <div className="mx-auto grid max-w-6xl items-center gap-12 py-24 md:grid-cols-2 md:py-32">
-          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="max-w-2xl w-full md:mr-8"
+          >
             <div className={`mb-5 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm ${themeStyles.pill}`}>
               <Sparkles size={16} />
               A virtual portfolio walkthrough
             </div>
 
             
-            <h1 className="text-5xl font-bold tracking-tight md:text-7xl">Hayden McVay.<br />Software Developer.</h1>
+            <h1 className="text-5xl font-bold tracking-tight md:text-7xl">Hayden McVay.<br /><span className="text-4xl md:text-6xl align-top">Software&nbsp;Developer.</span></h1>
             <p className={`mt-6 max-w-xl text-lg leading-8 ${themeStyles.bodyText}`}>A modern portfolio starter for showcasing projects, live demos, GitHub repos, and future AI or server-side experiments.</p>
 
             <div className="mt-8 flex flex-wrap gap-4">
@@ -118,7 +123,7 @@ export default function App() {
             </div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.15 }} className={`rounded-3xl p-5 shadow-2xl backdrop-blur ${themeStyles.card}`}>
+          <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.15 }} className={`rounded-3xl p-5 shadow-2xl backdrop-blur w-full ${themeStyles.card}`}>
             <div className={`rounded-2xl p-5 font-mono text-sm transition-colors duration-300 ${themeStyles.heroPanel}`}>
               <div className="mb-4 flex gap-2">
                 <span className="h-3 w-3 rounded-full bg-red-400" />
@@ -127,7 +132,7 @@ export default function App() {
               </div>
               <p className="text-blue-300">const portfolio = &#123;</p>
               <p className="ml-4">name: <span className="text-green-300">"Hayden"</span>,</p>
-              <p className="ml-4">focus: <span className="text-green-300">"Web Apps + AI Tools"</span>,</p>
+              <p className="ml-4">focus: <span className="text-green-300">"Web Apps + Open Source APIs"</span>,</p>
               <p className="ml-4">status: <span className="text-green-300">"Deploying"</span>,</p>
               <p className="ml-4">projects: [<span className="text-purple-300">"Portfolio"</span>, <span className="text-purple-300">"APIs"</span>, <span className="text-purple-300">"Servers"</span>]</p>
               <p className="text-blue-300">&#125;;</p>
@@ -175,16 +180,16 @@ export default function App() {
 
           <div className="grid gap-6 md:grid-cols-3">
             <div className={`rounded-3xl p-6 ${themeStyles.softCard}`}>
-              <h3 className="text-xl font-semibold">Web Products</h3>
-              <p className={`mt-3 ${themeStyles.footerText}`}>Designed and shipped portfolio sites, dashboard interfaces, and API-driven web apps for modern workflows.</p>
+              <h3 className="text-xl font-semibold">Web Applications</h3>
+              <p className={`mt-3 ${themeStyles.footerText}`}>Built responsive web apps, developer tools, and portfolio experiences using modern full-stack technologies.</p>
             </div>
             <div className={`rounded-3xl p-6 ${themeStyles.softCard}`}>
-              <h3 className="text-xl font-semibold">Automation Tools</h3>
-              <p className={`mt-3 ${themeStyles.footerText}`}>Built tooling for development automation, CLI-style browser experiences, and data-driven helpers.</p>
+              <h3 className="text-xl font-semibold">Developer Tools</h3>
+              <p className={`mt-3 ${themeStyles.footerText}`}>Created automation utilities, interactive browser-based tools, and CLI-inspired web experiences..</p>
             </div>
             <div className={`rounded-3xl p-6 ${themeStyles.softCard}`}>
-              <h3 className="text-xl font-semibold">AI Experiments</h3>
-              <p className={`mt-3 ${themeStyles.footerText}`}>Experimented with local LLM workflows, prompt-driven features, and intelligent support utilities.</p>
+              <h3 className="text-xl font-semibold">Systems Programming</h3>
+              <p className={`mt-3 ${themeStyles.footerText}`}>Worked with memory interaction, real-time tooling automation systems, and performance-focused software projects.</p>
             </div>
           </div>
         </div>
@@ -212,8 +217,8 @@ export default function App() {
           </div>
           <div className={`rounded-3xl p-6 ${themeStyles.softCard}`}>
             <Sparkles className="mb-4" />
-            <h3 className="text-xl font-semibold">Interests</h3>
-            <p className={`mt-3 ${themeStyles.footerText}`}>Local LLMs, React, automation, OpenSource APIs</p>
+            <h3 className="text-xl font-semibold">Development</h3>
+            <p className={`mt-3 ${themeStyles.footerText}`}>Git, GitHub, Linux, VS Code, CLI Tooling</p>
           </div>
         </div>
       </section>
