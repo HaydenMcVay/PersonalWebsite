@@ -29,12 +29,10 @@ export default function App() {
         <nav className="mx-auto flex max-w-6xl items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-5 py-4 backdrop-blur">
           <div className="flex items-center gap-2 font-semibold">
             <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-white text-zinc-950">H</div>
-            <span>Hayden.dev</span>
+            <span>HaydenMcVay.com</span>
           </div>
           <div className="hidden gap-6 text-sm text-zinc-300 md:flex">
-            <a href="#projects" className="hover:text-white">Projects</a>
-            <a href="#stack" className="hover:text-white">Stack</a>
-            <a href="#contact" className="hover:text-white">Contact</a>
+            {/* Top-right links removed intentionally */}
           </div>
         </nav>
 
@@ -42,7 +40,7 @@ export default function App() {
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-zinc-300">
               <Sparkles size={16} />
-              Developer portfolio test site
+              A virtual portfolio walkthrough
             </div>
 
             <h1 className="text-5xl font-bold tracking-tight md:text-7xl">Building useful web apps, tools, and experiments.</h1>
