@@ -104,8 +104,8 @@ export default function App() {
               A virtual portfolio walkthrough
             </div>
 
-            <h1 className="text-5xl font-bold tracking-tight md:text-7xl">Building useful web apps, tools, and experiments.</h1>
-
+            
+            <h1 className="text-5xl font-bold tracking-tight md:text-7xl">Hayden McVay.<br />Software Developer.</h1>
             <p className={`mt-6 max-w-xl text-lg leading-8 ${themeStyles.bodyText}`}>A modern portfolio starter for showcasing projects, live demos, GitHub repos, and future AI or server-side experiments.</p>
 
             <div className="mt-8 flex flex-wrap gap-4">
