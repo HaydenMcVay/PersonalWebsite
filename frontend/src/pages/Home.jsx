@@ -246,8 +246,8 @@ export default function Home() {
       <footer id="contact" className="border-t border-white/10 px-6 py-10 md:px-12 lg:px-20">
         <div className={`mx-auto flex max-w-6xl flex-col justify-between gap-4 md:flex-row md:items-center ${themeStyles.footerText}`}>
           <p>© 2026 Hayden McVay. Built with React + Tailwind.</p>
-          <a href="mailto:your@email.com" className="inline-flex items-center gap-2 hover:text-white">
-            <Mail size={16} /> your@email.com
+          <a href="mailto:hm68s@missouristate.edu" className="inline-flex items-center gap-2 hover:text-white">
+            <Mail size={16} /> hm68s@missouristate.edu
           </a>
         </div>
       </footer>
