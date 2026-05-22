@@ -10,6 +10,6 @@ dotlottie-wc.dotlottie-hero {
   display: block;
   width: 100%;
   height: 100%;
-  filter: saturate(1.05);
+  filter: saturate(1.05) brightness(0.92);
+  transform: scale(1.1);
 }
-
