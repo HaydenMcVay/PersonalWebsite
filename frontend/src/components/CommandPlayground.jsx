@@ -148,7 +148,7 @@ export default function CommandPlayground({ accent = "blue", theme = "dark", onT
     if (!command) {
       return;
     }
-
+// removed stray LinkedIn object literal
     setHistory((current) => [...current, command]);
     setHistoryIndex(-1);
 
@@ -157,7 +157,7 @@ export default function CommandPlayground({ accent = "blue", theme = "dark", onT
       setInput("");
       return;
     }
-
+// removed stray LinkedIn object literal
     if (command.startsWith("theme ")) {
       const nextTheme = command.slice("theme ".length);
 
