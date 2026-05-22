@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { Github, ArrowRight, Code2, Server, Sparkles, Mail } from "lucide-react";
 import { motion } from "framer-motion";
@@ -25,9 +25,23 @@ const projects = [
   },
 ];
 
+const heroBackgroundSrc = "https://lottie.host/801a7dd8-f2cf-4744-a680-d27e634c25fc/fYlxTmWN84.lottie";
+
 export default function Home() {
   const [theme, setTheme] = useState("dark");
   const [accent, setAccent] = useState("blue");
+
+  useEffect(() => {
+    if (document.querySelector('script[data-dotlottie-wc="true"]')) {
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = "https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.14/dist/dotlottie-wc.js";
+    script.type = "module";
+    script.dataset.dotlottieWc = "true";
+    document.head.appendChild(script);
+  }, []);
 
   const accentStyles = useMemo(() => {
     if (accent === "purple") {
@@ -58,6 +72,7 @@ export default function Home() {
         bodyText: "text-zinc-600",
         footerText: "text-zinc-600",
         heroPanel: "bg-zinc-950 text-zinc-100",
+        heroOverlay: "border-black/10 bg-white/58 shadow-[0_30px_120px_rgba(255,255,255,0.18)]",
       };
     }
 
@@ -71,6 +86,7 @@ export default function Home() {
         bodyText: "text-emerald-100/70",
         footerText: "text-emerald-100/60",
         heroPanel: "bg-[#031403] text-emerald-100",
+        heroOverlay: "border-emerald-400/20 bg-[rgba(3,20,3,0.62)] shadow-[0_30px_120px_rgba(16,185,129,0.1)]",
       };
     }
 
@@ -83,6 +99,7 @@ export default function Home() {
       bodyText: "text-zinc-300",
       footerText: "text-zinc-400",
       heroPanel: "bg-zinc-900 text-zinc-300",
+      heroOverlay: "border-white/10 bg-[rgba(10,14,24,0.58)] shadow-[0_30px_120px_rgba(0,0,0,0.45)]",
     };
   }, [theme]);
 
@@ -90,6 +107,18 @@ export default function Home() {
     <main className={`min-h-screen transition-colors duration-300 ${themeStyles.main}`}>
       <section className="relative overflow-hidden px-6 py-8 md:px-12 lg:px-20">
         <div className="absolute inset-0 -z-10" style={{ backgroundImage: accentStyles.glow }} />
+        <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+          <div className="absolute left-1/2 top-10 h-[520px] w-[520px] -translate-x-1/2 opacity-45 blur-[1px] md:left-[62%] md:top-6 md:h-[720px] md:w-[720px]">
+            <dotlottie-wc
+              src={heroBackgroundSrc}
+              class="dotlottie-hero"
+              speed="0.85"
+              autoplay
+              loop
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[rgba(3,7,18,0.18)]" />
+        </div>
 
         <nav className={`mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-5 py-4 backdrop-blur ${themeStyles.card}`}>
           <div className="flex items-center gap-2 font-semibold">
@@ -101,7 +130,8 @@ export default function Home() {
           </Link>
         </nav>
 
-        <div className="mx-auto grid max-w-6xl items-center gap-12 py-24 md:grid-cols-2 md:py-32">
+        <div className={`mx-auto mt-10 max-w-6xl rounded-[2rem] border p-6 backdrop-blur-xl md:mt-14 md:p-10 ${themeStyles.heroOverlay}`}>
+          <div className="grid items-center gap-12 py-10 md:grid-cols-2 md:py-14">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -119,7 +149,7 @@ export default function Home() {
               <span className="text-4xl align-top md:text-6xl">Software Developer.</span>
             </h1>
             <p className={`mt-6 max-w-xl text-lg leading-8 ${themeStyles.bodyText}`}>
-              A modern portfolio starter for showcasing projects, live demos, GitHub repos, and future AI or server-side experiments.
+              Missouri based Software Developer, passionate about transforming creative ideas into real-world digital experiences. Driven by curiosity, problem-solving, and a constant desire to keep learning and building.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
@@ -158,6 +188,7 @@ export default function Home() {
               <p className="text-blue-300">&#125;;</p>
             </div>
           </motion.div>
+          </div>
         </div>
       </section>
 
