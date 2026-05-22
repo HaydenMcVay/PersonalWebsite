@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Modern SPA with React frontend and Node.js backend",
   "scripts": {
+    "postinstall": "npm install --prefix frontend",
     "build": "cd frontend && npm run build",
     "frontend:install": "cd frontend && npm install",
     "backend:install": "cd backend && npm install",
