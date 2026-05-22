@@ -72,7 +72,7 @@ function buildResponse(command) {
     return [
       { type: "text", text: "Social links:" },
       { type: "link", text: "GitHub", href: "https://github.com/HaydenMcVay" },
-      { type: "link", text: "LinkedIn", href: "https://www.linkedin.com/in/HaydenMcVay" },
+      { type: "link", text: "LinkedIn", href: "https://www.linkedin.com/in/hayden-mcvay-3ab13b2ab/" },
       { type: "link", text: "Twitter", href: "https://twitter.com/HaydenMcVay" },
     ];
   }
@@ -214,7 +214,7 @@ export default function CommandPlayground({ accent = "blue", theme = "dark", onT
     }
 
     if (command === "open linkedin") {
-      window.open("https://www.linkedin.com/in/HaydenMcVay", "_blank", "noopener,noreferrer");
+      window.open("https://www.linkedin.com/in/hayden-mcvay-3ab13b2ab/", "_blank", "noopener,noreferrer");
       setLines((current) => [
         ...current,
         { type: "command", text: command },
