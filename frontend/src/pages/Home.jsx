@@ -25,8 +25,6 @@ const projects = [
   },
 ];
 
-const heroBackgroundSrc = "https://lottie.host/801a7dd8-f2cf-4744-a680-d27e634c25fc/fYlxTmWN84.lottie";
-
 export default function Home() {
   const [theme, setTheme] = useState("dark");
   const [accent, setAccent] = useState("blue");
@@ -95,21 +93,6 @@ export default function Home() {
     <main className={`min-h-screen transition-colors duration-300 ${themeStyles.main}`}>
       <section className="relative overflow-hidden px-6 py-8 md:px-12 lg:px-20">
         <div className="absolute inset-0 -z-10" style={{ backgroundImage: accentStyles.glow }} />
-        <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute inset-0 opacity-60">
-            <div className="absolute inset-y-0 left-1/2 w-[120vw] min-w-[900px] -translate-x-1/2 md:w-[1050px]">
-              <dotlottie-wc
-                src={heroBackgroundSrc}
-                className="dotlottie-hero"
-                speed="0.85"
-                autoplay
-                loop
-              />
-            </div>
-          </div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(3,7,18,0.08)_42%,rgba(3,7,18,0.28)_100%)]" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[rgba(2,6,23,0.16)] via-transparent to-[rgba(3,7,18,0.24)]" />
-        </div>
 
         <nav className={`mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-5 py-4 backdrop-blur ${themeStyles.card}`}>
           <div className="flex items-center gap-2 font-semibold">
@@ -137,7 +120,7 @@ export default function Home() {
             <h1 className="text-5xl font-bold tracking-tight md:text-7xl">
               Hayden McVay.
               <br />
-              <span className="whitespace-nowrap text-[clamp(3rem,6vw,4.75rem)] leading-none">Software Developer.</span>
+              <span className="whitespace-nowrap text-[clamp(2.8rem,5.6vw,4.5rem)] leading-none">Software Developer.</span>
             </h1>
             <p className={`mt-6 max-w-xl text-lg leading-8 ${themeStyles.bodyText}`}>
               Missouri based Software Developer, passionate about transforming creative ideas into real-world digital experiences. Driven by curiosity, problem-solving, and a constant desire to keep learning and building.
