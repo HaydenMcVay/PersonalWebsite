@@ -120,7 +120,7 @@ export default function Home() {
             <h1 className="text-5xl font-bold tracking-tight md:text-7xl">
               Hayden McVay.
               <br />
-              <span className="whitespace-nowrap text-[clamp(2.4rem,5.2vw,4.1rem)] leading-none">Software Developer.</span>
+              <span className="whitespace-nowrap text-[clamp(2.2rem,5.0vw,4.0rem)] leading-none">Software Developer.</span>
             </h1>
             <p className={`mt-6 max-w-xl text-lg leading-8 ${themeStyles.bodyText}`}>
               Missouri based Software Developer, passionate about transforming creative ideas into real-world digital experiences. Driven by curiosity, problem-solving, and a constant desire to keep learning and building.
