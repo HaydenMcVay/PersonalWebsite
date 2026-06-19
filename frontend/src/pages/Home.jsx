@@ -10,24 +10,28 @@ const projects = [
     description: "An online portfolio showcasing my work and projects.",
     tag: "Web / Portfolio",
     link: null,
+    linkLabel: null,
   },
   {
     title: "Dev Dashboard",
     description: "A frontend command center with mock GitHub activity, live-looking metrics, and polished widgets.",
     tag: "Web / Dashboard",
     link: "/dashboard",
+    linkLabel: "Live demo",
   },
   {
     title: "Dugout Dynasty",
     description: "A complex 2D baseball simulation game centered around managing your own team and rostering your favorite players and legends.",
     tag: "Web / Coding / Gaming",
-    link: null,
+    link: "/dugout-dynasty",
+    linkLabel: "Take A Look",
   },
 ];
 
 export default function Home() {
   const [theme, setTheme] = useState("dark");
   const [accent, setAccent] = useState("blue");
+  const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
 
   const accentStyles = useMemo(() => {
     if (accent === "purple") {
@@ -185,7 +189,7 @@ export default function Home() {
                 <p className={`mt-3 leading-7 ${themeStyles.footerText}`}>{project.description}</p>
                 {project.link && (
                   <Link to={project.link} className={`mt-6 inline-flex items-center gap-2 text-sm font-medium ${accentStyles.accentButton}`}>
-                    Live demo <ArrowRight size={15} />
+                    {project.linkLabel} <ArrowRight size={15} />
                   </Link>
                 )}
               </div>
@@ -250,26 +254,57 @@ export default function Home() {
 
       <footer id="contact" className="border-t border-white/10 px-6 py-10 md:px-12 lg:px-20">
         <div className={`mx-auto max-w-6xl ${themeStyles.footerText}`}>
-          <div className={`rounded-3xl p-6 ${themeStyles.softCard}`}>
-            <h3 className={theme === "light" ? "text-lg font-semibold text-zinc-950" : "text-lg font-semibold text-white"}>
-              Privacy Policy
-            </h3>
-            <p className="mt-3 leading-7">
-              This website is a personal portfolio. I do not intentionally collect sensitive personal information, sell visitor data, or share your information with third parties except when required to run basic site functionality.
-            </p>
-            <p className="mt-3 leading-7">
-              If you contact me by email, I will only use the information you provide to respond to your message. By continuing to use this site, you agree to this basic privacy policy.
-            </p>
-          </div>
-
-          <div className="mt-6 flex flex-col justify-between gap-4 md:flex-row md:items-center">
+          <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
             <p>© 2026 Hayden McVay. Built with React + Tailwind.</p>
-            <a href="mailto:hm68s@missouristate.edu" className={`inline-flex items-center gap-2 ${accentStyles.accentButton}`}>
-              <Mail size={16} /> hm68s@missouristate.edu
-            </a>
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+              <button
+                type="button"
+                onClick={() => setIsPrivacyOpen(true)}
+                className={`inline-flex items-center justify-center rounded-full border px-4 py-2 text-sm font-medium transition ${themeStyles.card} ${accentStyles.accentButton}`}
+              >
+                Privacy Policy
+              </button>
+              <a href="mailto:hm68s@missouristate.edu" className={`inline-flex items-center gap-2 ${accentStyles.accentButton}`}>
+                <Mail size={16} /> hm68s@missouristate.edu
+              </a>
+            </div>
           </div>
         </div>
       </footer>
+
+      {isPrivacyOpen && (
+        <div className="fixed inset-0 z-50 flex items-end bg-black/70 p-3 backdrop-blur-sm sm:items-center sm:p-6">
+          <div className={`mx-auto flex max-h-[90vh] w-full max-w-2xl flex-col overflow-hidden rounded-[2rem] border shadow-[0_30px_120px_rgba(0,0,0,0.45)] ${themeStyles.heroOverlay}`}>
+            <div className="flex items-start justify-between gap-4 border-b border-white/10 px-5 py-5 sm:px-7">
+              <div>
+                <p className={`text-sm font-medium uppercase tracking-[0.28em] ${accentStyles.accentText}`}>Privacy</p>
+                <h2 className={theme === "light" ? "mt-2 text-2xl font-semibold text-zinc-950" : "mt-2 text-2xl font-semibold text-white"}>
+                  Privacy Policy
+                </h2>
+              </div>
+              <button
+                type="button"
+                onClick={() => setIsPrivacyOpen(false)}
+                className={`rounded-full border px-4 py-2 text-sm font-medium transition ${themeStyles.card} ${accentStyles.accentButton}`}
+              >
+                Close
+              </button>
+            </div>
+
+            <div className={`overflow-y-auto px-5 py-5 sm:px-7 sm:py-6 ${themeStyles.bodyText}`}>
+              <p className="leading-7">
+                This website is a personal portfolio. I do not intentionally collect sensitive personal information, sell visitor data, or share your information with third parties except when required to run basic site functionality.
+              </p>
+              <p className="mt-4 leading-7">
+                If you contact me by email, I will only use the information you provide to respond to your message.
+              </p>
+              <p className="mt-4 leading-7">
+                By continuing to use this site, you agree to this basic privacy policy.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
