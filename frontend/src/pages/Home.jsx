@@ -18,8 +18,8 @@ const projects = [
     link: "/dashboard",
   },
   {
-    title: "Work on Roblox",
-    description: "Numerous projects and games developed on the Roblox platform, utilizing Lua scripting.",
+    title: "Dugout Dynasty",
+    description: "A complex 2D baseball simulation game centered around managing your own team and rostering your favorite players and legends.",
     tag: "Web / Coding / Gaming",
     link: null,
   },
@@ -249,11 +249,25 @@ export default function Home() {
       </section>
 
       <footer id="contact" className="border-t border-white/10 px-6 py-10 md:px-12 lg:px-20">
-        <div className={`mx-auto flex max-w-6xl flex-col justify-between gap-4 md:flex-row md:items-center ${themeStyles.footerText}`}>
-          <p>© 2026 Hayden McVay. Built with React + Tailwind.</p>
-          <a href="mailto:hm68s@missouristate.edu" className="inline-flex items-center gap-2 hover:text-white">
-            <Mail size={16} /> hm68s@missouristate.edu
-          </a>
+        <div className={`mx-auto max-w-6xl ${themeStyles.footerText}`}>
+          <div className={`rounded-3xl p-6 ${themeStyles.softCard}`}>
+            <h3 className={theme === "light" ? "text-lg font-semibold text-zinc-950" : "text-lg font-semibold text-white"}>
+              Privacy Policy
+            </h3>
+            <p className="mt-3 leading-7">
+              This website is a personal portfolio. I do not intentionally collect sensitive personal information, sell visitor data, or share your information with third parties except when required to run basic site functionality.
+            </p>
+            <p className="mt-3 leading-7">
+              If you contact me by email, I will only use the information you provide to respond to your message. By continuing to use this site, you agree to this basic privacy policy.
+            </p>
+          </div>
+
+          <div className="mt-6 flex flex-col justify-between gap-4 md:flex-row md:items-center">
+            <p>© 2026 Hayden McVay. Built with React + Tailwind.</p>
+            <a href="mailto:hm68s@missouristate.edu" className={`inline-flex items-center gap-2 ${accentStyles.accentButton}`}>
+              <Mail size={16} /> hm68s@missouristate.edu
+            </a>
+          </div>
         </div>
       </footer>
     </main>
